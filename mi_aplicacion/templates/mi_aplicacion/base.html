@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %}Mi proyecto DJ{% endblock %} </title>
+    {% load static %} 
+    <link rel="stylesheet" href="{% static 'mi_aplicacion/style.css' %}">
+
+</head>
+<body>
+    <header>
+        <h1>Mi proyecto DJANGO</h1>
+    </header>
+
+    <main>
+        {% block content %}{% endblock  %}
+    </main>
+
+    <footer>
+        <p>2025 - Creado por Curso DJANGO</p>
+    </footer>
+</body>
+</html>

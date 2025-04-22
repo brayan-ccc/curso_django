@@ -1,0 +1,16 @@
+{% extends "mi_aplicacion/base.html" %}
+{% block title %}Saludo{% endblock  %}
+
+{% block content %}
+   
+    <p>Hola {{nombre|upper}}</p> 
+    {% comment %} Alt + 124  | {% endcomment %}
+    <p>Fecha: {{fecha|date:"d/n/Y"}}</p>
+
+    {% if edad >= 18 %}
+      <p>{{nombre}} Es mayor de edad</p>
+    {% else %}
+      <p>{{nombre}} Es menor de edad</p>
+    {% endif %}
+
+{% endblock  %}
