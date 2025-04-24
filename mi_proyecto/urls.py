@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include # Importando include
 # from mi_aplicacion import views # Importando nuestra vista que está dentro de mi_aplicacion
-
+from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('hola/', views.hola_mundo), # Registrando la ruta para la vista hola mundo
@@ -26,4 +26,5 @@ urlpatterns = [
     path('mi_app/', include('mi_aplicacion.urls')),
     # Aqui registraremos las urls de otras aplicaciones
     path('otra_app/', include('otra_aplicacion.urls')),
+    path('',views.inicio,name='ini')
 ]

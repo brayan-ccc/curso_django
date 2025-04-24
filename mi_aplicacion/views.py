@@ -38,3 +38,9 @@ def inicio(request):
         'fecha': datetime.now()
     }
     return render(request,'mi_aplicacion/index.html',datos_sitio)
+
+def contactos(request):
+    return render(request,'mi_aplicacion/contactos.html')
+
+def estudiantes(request):
+    return render(request,'mi_aplicacion/estudiantes.html')
