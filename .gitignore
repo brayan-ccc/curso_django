@@ -1,6 +1,7 @@
 # Archivos de Python
-*.pyc __pycache__/
+*.pyc 
+__pycache__/
 # Base de datos local
-db.sqlite3
+
 # Entorno virtual
 env/
