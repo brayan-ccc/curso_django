@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse # Importanto http response para renderizar respuestas sin HTML
 from datetime import datetime
 from .models import Curso
+from .forms import ContactoForm
+
 
 # Create your views here.
 
@@ -56,4 +58,21 @@ def detalle_curso(request,curso_id):
 
     return render(request,'mi_aplicacion/detalle_curso.html',{'curso':curso,'estudiantes':estudiantes})
 
+def contactos(request):
+    if request.method == 'POST':
+        form = ContactoForm(request.POST)
+        if form.is_valid():
+            nombre = form.cleaned_data['nombre']
+            correo = form.cleaned_data['correo']
+            mensaje = form.cleaned_data['mensaje']
+           
+            # Aquí agregaremos la lógica para guardar los datos en la BASE DE DATOS
+
+            return render(request,'mi_aplicacion/gracias.html')
+
+
+    else:
+        form = ContactoForm()
+    
+    return render(request,'mi_aplicacion/contactos.html',{'form':form})
 
